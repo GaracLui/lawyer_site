@@ -1,0 +1,36 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# ==========================================
+# 1. ENVIRONMENT VARIABLES & SECRETS
+# ==========================================
+# NEVER commit your secrets to GitHub!
+.env
+.env.*
+*.pem
+
+# ==========================================
+# 2. NODE.JS & TAILWIND CSS
+# ==========================================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ==========================================
+# 3. OS & IDE FILES
+# ==========================================
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# VS Code / PyCharm settings
+.vscode/
+.idea/
