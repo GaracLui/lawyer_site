@@ -32,7 +32,29 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 ## 📂 **Estructura del proyecto**
 
 ```
-
+.venv/                                 # Entorno virtual para dependencias de Python (no incluido en el repositorio)
+about/
+blog/
+contact/
+core/
+  ├── context_processors.py            # Procesadores de contexto personalizados para plantillas
+  └── templates/
+        ├── base.html                  # Plantilla base con bloques para heredar
+        ├── footer.html                # Pie de página común a todas las páginas
+        └── navbar.html                # Barra de navegación común a todas las páginas
+lawyer_site/
+services/
+static/                                
+  ├──  css/                            # archivo CSS generado por Tailwind
+  ├──  images/
+  └──  js/
+manage.py
+Dockerfile
+docker-compose.yaml
+.env                                   # Archivo de variables de entorno (no incluido en el repositorio)
+package.json
+tailwind.config.js
+uv.lock                                # Archivo de bloqueo de dependencias generado por UV
 ```
 
 ## ⚙️ **Instalación y configuración**

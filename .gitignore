@@ -33,4 +33,14 @@ Thumbs.db
 
 # VS Code / PyCharm settings
 .vscode/
+
 .idea/
+
+# ==========================================
+# 4. STATIC FILES
+# ==========================================
+# Tailwind CSS output
+static/css/
+
+# Image files
+static/images/
