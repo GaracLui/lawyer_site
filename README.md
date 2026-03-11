@@ -117,7 +117,7 @@ Es posible que no he logrado integrar al projecto ciertos packages y apps ó al 
 
 - `uv` para la gestión de entornos virtuales y dependencias.
 - `Django` para el desarrollo del backend.
-- `psycopg-binary` para la conexión con PostgreSQL.
+- `psycopg[binary]` para la conexión con PostgreSQL.
 - `pillow` para la manipulación de imágenes.
 - `docker desktop` para contenerizar la aplicación.
 - `node.js` y `npm` para compilar Tailwind CSS y Vite.
