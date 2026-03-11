@@ -110,11 +110,10 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
    docker exec legal_project uv manage.py migrate
    ```
 
-   ```
 7. **Crea un `superuser` dentro de la carpeta `legal_project`:**
-    ```
-    docker compose exec web uv manage.py createsuperuser
-    ```
+   ```
+   docker compose exec web uv manage.py createsuperuser
+   ```
 
 
 ## 📦 **Packages y apps instalado/a/s**
@@ -125,9 +124,9 @@ Es posible que no he logrado integrar al projecto ciertos packages y apps ó al 
 - [x] `Django` para el desarrollo del backend.
 - [x] `psycopg[binary]` para la conexión con PostgreSQL.
 - [x] `pillow` para la manipulación de imágenes.
-- [ ] `docker` para contenerizar la aplicación.
 - [ ] `node.js` y `npm` para compilar Tailwind CSS y Vite.
 - [ ] `vite` para la gestión de assets frontend.
+- [ ] `docker` para contenerizar la aplicación.
 - [ ] `cloudinary` para la gestión de imágenes en la nube.
 
 ## 🎯 **Motivación**
