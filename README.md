@@ -16,7 +16,7 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 
 ## 🛠️ **Tecnológica utilizada y arquitectura**
 
-- **Backend:** Django 6.0.2 (Python) con una estructura modular de "Apps".
+- **Backend:** Django 6.+.+ (Python) con una estructura modular de "Apps".
 - **Base de datos:** PostgreSQL para una gestión robusta de datos relacionales.
 - **Frontend:** Tailwind CSS para una estética legal de alta gama y con un diseño boutique.
 - **Alojamiento de imágenes:** Cloudinary (CDN) para garantizar una entrega global ultrarrápida.
@@ -32,48 +32,58 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 ## 📂 **Estructura del proyecto**
 
 ```
-.venv/                                 # Entorno virtual para dependencias de Python (no incluido en el repositorio)
-about/
-blog/
-contact/
-core/
-  ├── context_processors.py            # Procesadores de contexto personalizados para plantillas
-  └── templates/
-        ├── base.html                  # Plantilla base con bloques para heredar
-        ├── footer.html                # Pie de página común a todas las páginas
-        └── navbar.html                # Barra de navegación común a todas las páginas
-lawyer_site/
-services/
-static/                                
-  ├──  css/                            # archivo CSS generado por Tailwind
-  ├──  images/
-  └──  js/
-manage.py
-Dockerfile
-docker-compose.yaml
-.env                                   # Archivo de variables de entorno (no incluido en el repositorio)
-package.json
-tailwind.config.js
-uv.lock                                # Archivo de bloqueo de dependencias generado por UV
+.
+├── .venv/                    # Entorno virtual para dependencias de Python (no incluido)
+├── about/                    # App de Django para la sección "Sobre Nosotros"
+├── blog/                     # App de Django para la sección "Blog"
+├── contact/                  # App de Django para la sección "Contacto"
+├── core/                     # App de Django para funcionalidades comunes 
+├── service/                  # App de Django para la sección "Servicios"
+├── assets/                   # Front-end source files
+│   ├── javascript/           #             
+│   └── styles/               # 
+├── static/                   # Built front-end assets (generated)
+│   ├── css/
+│   ├── images/
+│   └── js/
+├── templates/                # Django templates
+│   ├── about/
+│   ├── blog/
+│   ├── contact/
+│   ├── core/
+│   │   ├── base.html         # Plantilla base con bloques para heredar
+│   │   ├── footer.html       # Pie de página común a todas las páginas
+│   │   └──  navbar.html      # Barra de navegación común a todas las páginas
+│   └── services/
+├── lawyer_site/              # Django project settings
+│   ├── settings.py
+│   └── urls.py
+├── .env                      # Archivo de variables de entorno (no incluido)
+├── Dockerfile
+├── docker-compose.yaml
+├── manage.py
+├── vite.config.js            # Vite configuration
+├── package.json              # Node.js dependencies
+└── pyproject.toml            # Python dependencies
 ```
 
 ## ⚙️ **Instalación y configuración**
 
 1. **Clona el repositorio:**
-    ```
-    git clone https://github.com/GaracLui/training_legal_remake.git
-    cd training_legal_remake
-    ```
-2. **Configurar entorno virtual y activalo:**
-    ```
-    uv
-    ```
-3. **Installar dependencias:**
    ```
-   uv
+   # Instala dependencias de Python
+   uv sync
+   # o con pip (si no usas UV):
+   # pip install .
    ```
-4. **Variables de entorno:**
-   Crea un archivo `.env` donde agregaras tus credenciales.
+
+2. **Installar dependencias JavaScript:**
+   ```
+   npm install
+   ```
+
+3. **Variables de entorno:**
+   *Crea un archivo `.env` donde agregaras tus credenciales.*
    ```
    POSTGRES_DB=dev_database
    POSTGRES_USER=catanist
@@ -84,30 +94,26 @@ uv.lock                                # Archivo de bloqueo de dependencias gene
    SECRET_KEY='|your_catan_website_super_password|'
    DEBUG=True
    ```
-5. **Crea (o reconstruye) las imágenes para todos los servicios definidos en su archivo `docker-compose.yaml` y luego crea, inicia y adjunta los contenedores para esos servicios:**
+
+4. **Crea (o reconstruye) las imágenes para todos los servicios definidos en su archivo `docker-compose.yaml` y luego crea, inicia y adjunta los contenedores para esos servicios:**
    ```
    docker compose up --build
    ```
-6. **Realiza una migración basada en los modelos de Django (estando activo Docker):**
-   *Nos ubicamos dentro del contenedor de Django para ejecutar el comando `makemigrations` y luego `migrate` para crear las tablas en la base de datos PostgreSQL.*
+
+5. **Realiza una migración basada en los modelos de Django (estando activo Docker):**
    ```
-   cd legal_project
+   docker exec legal_project uv manage.py makemigrations
    ```
+
+6. **Aplica las migraciones:**
    ```
-   docker exec legal_project python manage.py makemigrations
+   docker exec legal_project uv manage.py migrate
    ```
-7. **Aplica las migraciones:**
+
    ```
-   docker exec legal_project python manage.py migrate
-   ```
-   *Opcional: Comprueba de que se a creado correctamente la base de datos:*
-   ```
-   docker exec -ti postgres_db psql -U catanist -d dev_database
-   \dt
-   ```
-8. **Crea un `superuser` dentro de la carpeta `legal_project` (`cd legal_project``):**
+7. **Crea un `superuser` dentro de la carpeta `legal_project`:**
     ```
-    docker compose exec web python manage.py createsuperuser
+    docker compose exec web uv manage.py createsuperuser
     ```
 
 
@@ -115,13 +121,14 @@ uv.lock                                # Archivo de bloqueo de dependencias gene
 
 Es posible que no he logrado integrar al projecto ciertos packages y apps ó al querer ejecutar el sitio web se necesiten posteriores acciones.
 
-- `uv` para la gestión de entornos virtuales y dependencias.
-- `Django` para el desarrollo del backend.
-- `psycopg[binary]` para la conexión con PostgreSQL.
-- `pillow` para la manipulación de imágenes.
-- `docker desktop` para contenerizar la aplicación.
-- `node.js` y `npm` para compilar Tailwind CSS y Vite.
-- `cloudinary` para la gestión de imágenes en la nube.
+- [x] `uv` para la gestión de entornos virtuales y dependencias.
+- [x] `Django` para el desarrollo del backend.
+- [x] `psycopg[binary]` para la conexión con PostgreSQL.
+- [x] `pillow` para la manipulación de imágenes.
+- [ ] `docker` para contenerizar la aplicación.
+- [ ] `node.js` y `npm` para compilar Tailwind CSS y Vite.
+- [ ] `vite` para la gestión de assets frontend.
+- [ ] `cloudinary` para la gestión de imágenes en la nube.
 
 ## 🎯 **Motivación**
 
