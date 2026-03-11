@@ -123,5 +123,5 @@ STATICFILES_DIRS = [
 
 
 # Media files (images uploaded by owner)
-MEDIA_URL = 'static/images/'
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
