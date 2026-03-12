@@ -3,8 +3,12 @@
   <head>
     <title>Getting Started with Django and Vite</title>
     {% vite_hmr_client %}
+    {% vite_asset 'assets/styles/style.css' %}
   </head>
-  <body>
-    {% vite_asset 'assets/index.js' %}
+  <body class="bg-amber-50">
+
+    <h1 class="text-center text-4xl text-white">Hello, Vite!</h1>
+    <p class="text-center text-white">(and Tailwind)</p>
+    
   </body>
 </html>
