@@ -35,14 +35,18 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 .
 ├── .venv/                    # Entorno virtual para dependencias de Python (no incluido)
 ├── about/                    # App de Django para la sección "Sobre Nosotros"
-├── blog/                     # App de Django para la sección "Blog"
-├── contact/                  # App de Django para la sección "Contacto"
-├── core/                     # App de Django para funcionalidades comunes 
-├── media/                    # Archivos subidos por el cliente (imágenes, documentos)
-├── services/                 # App de Django para la sección "Servicios"
 ├── assets/                   # Front-end source files
 │   ├── javascript/           #             
 │   └── styles/               # 
+├── blog/                     # App de Django para la sección "Blog"
+├── contact/                  # App de Django para la sección "Contacto"
+├── core/                     # App de Django para funcionalidades comunes 
+├── lawyer_site/              # Django project settings
+│   ├── settings.py
+│   └── urls.py
+├── media/                    # Archivos subidos por el cliente (imágenes, documentos)
+├── node_modules/             # Dependencias de Node.js (no incluido)
+├── services/                 # App de Django para la sección "Servicios"
 ├── static/                   # Built front-end assets (generated)
 │   ├── css/
 │   └── js/
@@ -55,9 +59,6 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 │   │   ├── footer.html       # Pie de página común a todas las páginas
 │   │   └── navbar.html       # Barra de navegación común a todas las páginas
 │   └── services/
-├── lawyer_site/              # Django project settings
-│   ├── settings.py
-│   └── urls.py
 ├── .env                      # Archivo de variables de entorno (no incluido)
 ├── Dockerfile
 ├── docker-compose.yaml
@@ -71,6 +72,7 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 ## ⚙️ **Instalación y configuración**
 
 1. **Clona el repositorio:**
+   *Más información en `https://github.com/astral-sh/uv`*
    ```
    # Instala dependencias de Python
    uv sync
@@ -157,4 +159,4 @@ Este es un proyecto con fines educativos y de demostración. Las imágenes de pr
 
    www.linkedin.com/in/garacciolo-luis-alfredo
 
-Hecho con ❤️ y Python.
+*Hecho con ❤️ y Python.*
