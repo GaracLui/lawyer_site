@@ -13,7 +13,7 @@ export default defineConfig({
         manifest: "manifest.json",      // Generate a manifest file for Django to read
         rollupOptions: {
             input: {
-                'style': path.resolve(__dirname, './assets/styles/style.css'),
+                style: path.resolve(__dirname, './assets/styles/style.css'),
             },
             output: {
                 // Output JS bundle with a name that includes the entry point name
