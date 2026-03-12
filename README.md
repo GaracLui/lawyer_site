@@ -115,6 +115,14 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
    docker compose exec web uv manage.py createsuperuser
    ```
 
+8. **Ejecutar en modo desarrollo:**
+   ```
+   npm run dev
+   ```
+   ```
+   docker compose exec web uv manage.py runserver
+   ```
+
 
 ## 📦 **Packages y apps instalado/a/s**
 
@@ -124,8 +132,10 @@ Es posible que no he logrado integrar al projecto ciertos packages y apps ó al 
 - [x] `Django` para el desarrollo del backend.
 - [x] `psycopg[binary]` para la conexión con PostgreSQL.
 - [x] `pillow` para la manipulación de imágenes.
-- [ ] `node.js` y `npm` para compilar Tailwind CSS y Vite.
-- [ ] `vite` para la gestión de assets frontend.
+- [x] `node.js` y `npm` para compilar Tailwind CSS y Vite.
+- [x] `vite` para la gestión de assets frontend.
+- [x] `django-vite` para integrar Vite con Django.
+- [x] `tailwindcss` para el diseño frontend.
 - [ ] `docker` para contenerizar la aplicación.
 - [ ] `cloudinary` para la gestión de imágenes en la nube.
 
