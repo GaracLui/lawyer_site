@@ -20,5 +20,4 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello-vite/', TemplateView.as_view(template_name='hello_vite.html'), name='hello_vite'),
 ]
