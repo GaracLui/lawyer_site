@@ -38,13 +38,13 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 ├── blog/                     # App de Django para la sección "Blog"
 ├── contact/                  # App de Django para la sección "Contacto"
 ├── core/                     # App de Django para funcionalidades comunes 
-├── service/                  # App de Django para la sección "Servicios"
+├── media/                    # Archivos subidos por el cliente (imágenes, documentos)
+├── services/                 # App de Django para la sección "Servicios"
 ├── assets/                   # Front-end source files
 │   ├── javascript/           #             
 │   └── styles/               # 
 ├── static/                   # Built front-end assets (generated)
 │   ├── css/
-│   ├── images/
 │   └── js/
 ├── templates/                # Django templates
 │   ├── about/
@@ -53,7 +53,7 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 │   ├── core/
 │   │   ├── base.html         # Plantilla base con bloques para heredar
 │   │   ├── footer.html       # Pie de página común a todas las páginas
-│   │   └──  navbar.html      # Barra de navegación común a todas las páginas
+│   │   └── navbar.html       # Barra de navegación común a todas las páginas
 │   └── services/
 ├── lawyer_site/              # Django project settings
 │   ├── settings.py
@@ -62,9 +62,10 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 ├── Dockerfile
 ├── docker-compose.yaml
 ├── manage.py
-├── vite.config.js            # Vite configuration
 ├── package.json              # Node.js dependencies
-└── pyproject.toml            # Python dependencies
+├── pyproject.toml            # Python dependencies
+├── uv.lock                   # Lockfile para dependencias de Python
+└── vite.config.js            # Vite configuration
 ```
 
 ## ⚙️ **Instalación y configuración**
@@ -102,17 +103,17 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
 
 5. **Realiza una migración basada en los modelos de Django (estando activo Docker):**
    ```
-   docker exec legal_project uv manage.py makemigrations
+   docker exec [container_name] uv manage.py makemigrations
    ```
 
 6. **Aplica las migraciones:**
    ```
-   docker exec legal_project uv manage.py migrate
+   docker exec [container_name] uv manage.py migrate
    ```
 
-7. **Crea un `superuser` dentro de la carpeta `legal_project`:**
+7. **Crea un `superuser` dentro de la carpeta `[container_name]`:**
    ```
-   docker compose exec web uv manage.py createsuperuser
+   docker compose exec [web] uv manage.py createsuperuser
    ```
 
 8. **Ejecutar en modo desarrollo:**
@@ -120,7 +121,7 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
    npm run dev
    ```
    ```
-   docker compose exec web uv manage.py runserver
+   docker compose exec [web] uv manage.py runserver
    ```
 
 
@@ -136,6 +137,7 @@ Es posible que no he logrado integrar al projecto ciertos packages y apps ó al 
 - [x] `vite` para la gestión de assets frontend.
 - [x] `django-vite` para integrar Vite con Django.
 - [x] `tailwindcss` para el diseño frontend.
+- [x] `django-unfold` para admin personalizado.
 - [ ] `docker` para contenerizar la aplicación.
 - [ ] `cloudinary` para la gestión de imágenes en la nube.
 
