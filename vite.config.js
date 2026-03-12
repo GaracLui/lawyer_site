@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+    plugins: [tailwindcss()],
     base: '/static/', // This should match the STATIC_URL in your Django settings.py
     build: {
         // Ehere Vite will output the built files
@@ -11,11 +13,12 @@ export default defineConfig({
         manifest: "manifest.json",      // Generate a manifest file for Django to read
         rollupOptions: {
             input: {
-                'index': path.resolve(__dirname, './assets/index.js'),
+                'style': path.resolve(__dirname, './assets/styles/style.css'),
             },
             output: {
                 // Output JS bundle with a name that includes the entry point name
                 entryFileNames: `js/[name]-bundle.js`,
+                assetFileNames: `css/[name].css`,
             },
         },
     },
