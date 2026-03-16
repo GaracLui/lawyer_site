@@ -26,8 +26,8 @@ class SiteSettings(TimeStamped):
     company_name_initials = models.CharField(max_length=10, null=True, blank=True, verbose_name="Company Name Initials")
 
     # Logo fields with optional CSS for styling
-    logo_light = models.ImageField(upload_to='site_settings/', null=True, blank=True, verbose_name="Light Logo")
-    logo_dark = models.ImageField(upload_to='site_settings/', null=True, blank=True, verbose_name="Dark Logo")
+    logo_light = models.ImageField(upload_to='site_settings/logo/light/', null=True, blank=True, verbose_name="Light Logo")
+    logo_dark = models.ImageField(upload_to='site_settings/logo/dark/', null=True, blank=True, verbose_name="Dark Logo")
 
     # Contact information
     contact_email = models.EmailField(null=True, blank=True, verbose_name="Contact Email")
