@@ -10,6 +10,12 @@ wheels/
 .venv
 
 # ==========================================
+# 0. PYTHON & DJANGO
+# ==========================================
+# SQL lite
+db.sqlite3
+
+# ==========================================
 # 1. ENVIRONMENT VARIABLES & SECRETS
 # ==========================================
 # NEVER commit your secrets to GitHub!
