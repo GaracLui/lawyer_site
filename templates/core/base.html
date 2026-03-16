@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block meta %}
-    {% endblock %}
+    {% endblock meta%}
 
     <title>
         {% block title %}
             {{ settings.company_name|default:"fallback_value" }}
-        {% endblock %}
+        {% endblock title%}
     </title>
 
     {% vite_hmr_client %}
@@ -19,6 +19,7 @@
 
 </head>
 <body class="bg-amber-50 ">
+    {% include 'core/navbar.html' %}
 
     <p class="text-center text-2xl font-bold text-gray-800 py-4"> The company name is:
         <span>
@@ -26,7 +27,8 @@
         </span>
     </p>
     {% block content %}
-    {% endblock %}
+    {% endblock content%}
 
+    {% include 'core/footer.html' %}
 </body>
 </html>
