@@ -4,6 +4,7 @@ def global_settings(request):
     """
     Context processor para agregar configuraciones globales a todas las plantillas.
     """
+    settings = SiteSettings.objects.first()
     return {
-        'settings': SiteSettings.objects.first()  # Asumiendo que solo hay una instancia de configuración
+        'settings': settings  # Asumiendo que solo hay una instancia de configuración
     }

@@ -8,7 +8,11 @@
     {% block meta %}
     {% endblock %}
 
-    <title>{% block title %}{{ global_settings.company_name }}{% endblock %}</title>
+    <title>
+        {% block title %}
+            {{ settings.company_name|default:"fallback_value" }}
+        {% endblock %}
+    </title>
 
     {% vite_hmr_client %}
     {% vite_asset 'assets/styles/style.css' %}
@@ -16,7 +20,11 @@
 </head>
 <body class="bg-amber-50 ">
 
-    <p class="text-center text-2xl font-bold text-gray-800 py-4">{{ SiteSettings.company_name }}</p>
+    <p class="text-center text-2xl font-bold text-gray-800 py-4"> The company name is:
+        <span>
+            {{ settings.company_name|default:"fallback_value" }}
+        </span>
+    </p>
     {% block content %}
     {% endblock %}
 
