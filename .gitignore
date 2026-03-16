@@ -51,3 +51,4 @@ static/css/
 
 # Image files
 media/
+db.sqlite3
