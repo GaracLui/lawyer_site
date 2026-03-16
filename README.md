@@ -103,28 +103,30 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
    docker compose up --build
    ```
 
-5. **Realiza una migración basada en los modelos de Django (estando activo Docker):**
+5. **Realiza una migración basada en los modelos de Django :**
    ```
-   docker exec [container_name] uv manage.py makemigrations
+   uv run manage.py makemigrations
    ```
 
 6. **Aplica las migraciones:**
    ```
-   docker exec [container_name] uv manage.py migrate
+   uv run manage.py migrate
    ```
 
 7. **Crea un `superuser` dentro de la carpeta `[container_name]`:**
    ```
-   docker compose exec [web] uv manage.py createsuperuser
+   uv run manage.py createsuperuser
    ```
 
 8. **Ejecutar en modo desarrollo:**
    ```
    npm run dev
    ```
+   *Otra terminal*
    ```
-   docker compose exec [web] uv manage.py runserver
+   uv run manage.py runserver
    ```
+   *Esto iniciará el servidor de desarrollo de Django y Vite. El sitio web estará disponible en `http://localhost:8000`.*
 
 
 ## 📦 **Packages y apps instalado/a/s**
