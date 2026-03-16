@@ -12,8 +12,9 @@ wheels/
 # ==========================================
 # 0. PYTHON & DJANGO
 # ==========================================
-# SQL lite
+# Django local database (just in case you test locally without Docker)
 db.sqlite3
+db.sqlite3-journal
 
 # ==========================================
 # 1. ENVIRONMENT VARIABLES & SECRETS
