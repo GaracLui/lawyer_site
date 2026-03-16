@@ -8,7 +8,7 @@
     {% block meta %}
     {% endblock %}
 
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{% block title %}{{ global_settings.company_name }}{% endblock %}</title>
 
     {% vite_hmr_client %}
     {% vite_asset 'assets/styles/style.css' %}
@@ -16,6 +16,7 @@
 </head>
 <body class="bg-amber-50 ">
 
+    <p class="text-center text-2xl font-bold text-gray-800 py-4">{{ SiteSettings.company_name }}</p>
     {% block content %}
     {% endblock %}
 
