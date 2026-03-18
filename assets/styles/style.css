@@ -1,3 +1,5 @@
+/* Importación de la fuente a utilizada en el sitio */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -18,10 +20,8 @@
 }
 
 
-/* 1. Importación de la fuente a utilizada en el sitio */
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
-/* 2. Estilos base para aplicar la paleta automáticamente */
+/* 1. Estilos base para aplicar la paleta automáticamente */
 @layer base {
     body {
         @apply bg-brand-60 text-brand-30 font-brand transition-colors duration-300;
@@ -29,7 +29,7 @@
     }
 }
 
-/* 3. Abstracción de componentes sobreusados (DRY) */
+/* 2. Abstracción de componentes sobreusados (DRY) */
 @layer components {
     .btn-lawyer {
         /* Basado en el estilo 'pill' y 'shadow' del sitio original */

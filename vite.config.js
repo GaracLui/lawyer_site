@@ -14,6 +14,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 style: path.resolve(__dirname, './assets/styles/style.css'),
+                main: path.resolve(__dirname, './assets/javascript/main.js')
             },
             output: {
                 // Output JS bundle with a name that includes the entry point name
