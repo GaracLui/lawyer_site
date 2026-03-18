@@ -1,1 +1,44 @@
 @import 'tailwindcss';
+
+@theme {
+    /* 60% - Color Dominante (Fondos y áreas grandes) */
+    --color-brand-60: var(--color-slate-50);
+    --color-brand-60-dark: var(--color-slate-950);
+
+    /* 30% - Color Secundario (Navbar, Footer, encabezados) */
+    --color-brand-30: var(--color-cyan-900);
+    --color-brand-30-dark: var(--color-cyan-800);
+
+    /* 10% - Color de Acento (Botones CTA, iconos clave) */
+    --color-brand-10: var(--color-amber-600);
+    --color-brand-10-dark: var(--color-amber-500);
+
+    /* Fuente personalizada del sitio */
+    --font-brand: "Cabin", sans-serif;
+}
+
+
+/* 1. Importación de la fuente a utilizada en el sitio */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+/* 2. Estilos base para aplicar la paleta automáticamente */
+@layer base {
+    body {
+        @apply bg-brand-60 text-brand-30 font-brand transition-colors duration-300;
+        @apply dark:bg-brand-60-dark dark:text-slate-100;
+    }
+}
+
+/* 3. Abstracción de componentes sobreusados (DRY) */
+@layer components {
+    .btn-lawyer {
+        /* Basado en el estilo 'pill' y 'shadow' del sitio original */
+        @apply px-6 py-2 rounded-full font-bold shadow-md transition-all active:scale-95;
+        @apply bg-brand-10 text-slate-50;
+        @apply hover:bg-brand-10 hover:brightness-75;
+    }
+    
+    .nav-link-lawyer {
+        @apply text-slate-300 hover:text-slate-50 transition-colors;
+    }
+}
