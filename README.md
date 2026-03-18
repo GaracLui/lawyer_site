@@ -1,6 +1,7 @@
 ![Estado del Proyecto](https://img.shields.io/badge/Estado-En_Desarrollo-yellow) 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
 ![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white) 
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=SQLite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white) 
 ![Docker](https://img.shields.io/badge/Docker-fds?style=flat-square&logo=docker&logoColor=white&labelColor=%232496ED&color=%232496ED) 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
@@ -10,11 +11,12 @@
 
 # ⚖️ Sistema de gestión de la práctica jurídica (remake)
 
-**🚀 The Evolution: From Legacy PHP to Modern Django**
+**🚀 La evolución: De PHP heredado a Django moderno**
 
-Este proyecto es una reestructuración completa del sitio web de un bufete de abogados profesional. Migré una arquitectura antigua de **CodeIgniter 4/Bootstrap 5** a un ecosistema de **Django/Tailwind**.
+Este proyecto es una reestructuración completa del sitio web de un bufete de abogados profesional. 
+Migrando una arquitectura de **CodeIgniter 4/Bootstrap 5** -> a un ecosistema de **Django/Tailwind**.
 
-## 🛠️ **Tecnológica utilizada y arquitectura**
+## 🛠️ **Tecnológias y arquitecturas a utilizar**
 
 - **Backend:** Django 6.+.+ (Python) con una estructura modular de "Apps".
 - **Base de datos:** PostgreSQL para una gestión robusta de datos relacionales.
@@ -98,31 +100,27 @@ Este proyecto es una reestructuración completa del sitio web de un bufete de ab
    DEBUG=True
    ```
 
-4. **Crea (o reconstruye) las imágenes para todos los servicios definidos en su archivo `docker-compose.yaml` y luego crea, inicia y adjunta los contenedores para esos servicios:**
-   ```
-   docker compose up --build
-   ```
-
-5. **Realiza una migración basada en los modelos de Django :**
+4. **Realiza una migración basada en los modelos de Django :**
    ```
    uv run manage.py makemigrations
    ```
 
-6. **Aplica las migraciones:**
+5. **Aplica las migraciones:**
    ```
    uv run manage.py migrate
    ```
 
-7. **Crea un `superuser` dentro de la carpeta `[container_name]`:**
+6. **Crea un `superuser` dentro de la carpeta `[container_name]`:**
    ```
    uv run manage.py createsuperuser
    ```
 
-8. **Ejecutar en modo desarrollo:**
+7. **Ejecutar en modo desarrollo:**
+   *En dos terminales distintas*
    ```
    npm run dev
    ```
-   *Otra terminal*
+   
    ```
    uv run manage.py runserver
    ```
@@ -143,6 +141,7 @@ Es posible que no he logrado integrar al projecto ciertos packages y apps ó al 
 - [x] `tailwindcss` para el diseño frontend.
 - [x] `django-unfold` para admin personalizado.
 - [ ] `docker` para contenerizar la aplicación.
+- [ ] `PostgreSQL` .
 - [ ] `cloudinary` para la gestión de imágenes en la nube.
 
 ## 🎯 **Motivación**
