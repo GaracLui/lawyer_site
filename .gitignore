@@ -48,6 +48,8 @@ Thumbs.db
 # ==========================================
 # Tailwind CSS output
 static/css/
+# JavaScript output
+static/js/
 
 # Image files
 media/
