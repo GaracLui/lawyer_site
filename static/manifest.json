@@ -3,18 +3,15 @@
     "file": "js/main-bundle.js",
     "name": "main",
     "src": "assets/javascript/main.js",
-    "isEntry": true,
-    "imports": [
-      "assets/styles/style.css"
-    ]
+    "isEntry": true
   },
   "assets/styles/style.css": {
-    "file": "js/style-bundle.js",
-    "name": "style",
+    "file": "css/style.css",
     "src": "assets/styles/style.css",
     "isEntry": true,
-    "css": [
-      "css/style.css"
+    "name": "style",
+    "names": [
+      "style.css"
     ]
   }
 }

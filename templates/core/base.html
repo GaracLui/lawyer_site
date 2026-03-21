@@ -1,6 +1,6 @@
 {% load django_vite %}
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,19 +16,26 @@
 
     {% vite_hmr_client %}
     {% vite_asset 'assets/styles/style.css' %}
-    {% vite_asset 'assets/javascript/main.js' %}
 </head>
-<body>
+<body class="body">
     {% include 'core/navbar.html' %}
-
-    <p class="text-center text-2xl font-bold text-gray-800 py-4"> The company name is:
-        <span>
-            {{ settings.company_name|default:"Lawyer" }}
-        </span>
-    </p>
+    
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Hello there</h1>
+            <p class="py-6">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                quasi. In deleniti eaque aut repudiandae et a id nisi.
+            </p>
+            <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </div>
     {% block content %}
     {% endblock content%}
-
+    
     {% include 'core/footer.html' %}
+    {% vite_asset 'assets/javascript/main.js' %}
 </body>
 </html>
