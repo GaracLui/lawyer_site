@@ -32,8 +32,11 @@
             </div>
         </div>
     </div>
-    {% block content %}
-    {% endblock content%}
+    <main>
+        {% block content %}
+        
+        {% endblock content%}
+    </main>
     
     {% include 'core/footer.html' %}
     {% vite_asset 'assets/javascript/main.js' %}

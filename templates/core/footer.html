@@ -1,6 +1,6 @@
 <div class="fab fab-flower">
   <!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
-  <div tabindex="0" role="button" class="btn btn-circle btn-lg">
+  <div tabindex="0" role="button" class="btn btn-circle btn-lg btn-primary">
     <svg
       aria-label="Options"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
   </div>
 
   <!-- Main Action button replaces the original button when FAB is open -->
-  <button class="fab-main-action btn btn-circle btn-lg btn-primary">
+  <button class="fab-main-action btn btn-circle btn-lg">
     <svg
       aria-label="Change options"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,14 +32,14 @@
   </button>
 
   <!-- buttons that show up when FAB is open -->
-  <button class="btn btn-circle btn-lg">
+  <button class="btn btn-circle btn-lg btn-secondary">
     <label class="swap swap-rotate">
       <!-- this hidden checkbox controls the state -->
-      <input type="checkbox" class="theme-controller" value="dark" />
+      <input type="checkbox" class="theme-controller" value="myThemeDark" />
 
       <!-- sun icon -->
       <svg
-        aria-label="New camera photo"
+        aria-label="Sun theme"
         xmlns="http://www.w3.org/2000/svg"
         position: absolute
         class="swap-on size-6 fill-current">
@@ -49,7 +49,7 @@
 
       <!-- moon icon -->
       <svg
-        aria-label="New camera photo"
+        aria-label="Moon theme"
         xmlns="http://www.w3.org/2000/svg"
         position: absolute
         class="swap-off size-6 fill-current">
@@ -58,9 +58,10 @@
       </svg>
     </label>
   </button>
-  <button class="btn btn-circle btn-lg" id="btn-back-to-top">
+  <button class="btn btn-circle btn-lg btn-secondary" id="btn-back-to-top">
+    <!-- Up scroll-->
     <svg
-      aria-label="New camera photo"
+      aria-label="Up scroll"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
       class="size-6 fill-current"
@@ -73,7 +74,7 @@
   
 </div>
 
-<footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+<footer class="footer sm:footer-horizontal bg-accent text-accent-content p-10">
   <aside>
     <svg
       width="50"
