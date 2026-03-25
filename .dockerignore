@@ -1,0 +1,9 @@
+.venv
+node_modules
+.git
+__pycache__
+*.pyc
+static/js/
+static/css/
+static/manifest.json
+.env
