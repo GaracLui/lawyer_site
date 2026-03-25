@@ -53,3 +53,21 @@ static/js/
 
 # Image files
 media/
+
+# ==========================================
+# 5. Vue.js
+# ==========================================
+# https://github.com/vuejs/core/blob/main/.gitignore
+dist
+.DS_Store
+node_modules
+coverage
+temp
+explorations
+TODOs.md
+*.log
+.idea
+.eslintcache
+dts-build/packages
+*.tsbuildinfo
+*.tgz
