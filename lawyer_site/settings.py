@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contact',
     'core',
     'services',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,5 @@ DJANGO_VITE = {
         "dev_mode": DEBUG
     }
 }
+
+# REST framework settings
